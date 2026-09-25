@@ -1,0 +1,11 @@
+{
+  "name": "microsoft-graph-security",
+  "version": "0.4.0",
+  "description": "Portable Microsoft 365 security workflows for MCP-compatible agents.",
+  "author": {
+    "name": "Rohi Rikman"
+  },
+  "homepage": "https://github.com/RohiRIK/microsoft-graph-mcp-servers",
+  "repository": "https://github.com/RohiRIK/microsoft-graph-mcp-servers.git",
+  "license": "MIT"
+}

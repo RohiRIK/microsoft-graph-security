@@ -1,0 +1,83 @@
+{
+  "title": "Plan: merge the old DLP policies — Contoso",
+  "short_title": "DLP merge plan",
+  "subtitle": "Example spec with invented data. Draft for discussion — nothing has been changed.",
+  "pages": [
+    {
+      "type": "summary",
+      "name": "The plan",
+      "before_after": {
+        "before_label": "TODAY", "before_value": 6, "before_caption": "old policies",
+        "after_label": "AFTER", "after_value": 1, "after_caption": "merged policy"
+      },
+      "sections": [
+        {
+          "heading": "What we found",
+          "bullets": [
+            "5 of the 6 are country templates that look for different data, so they merge without conflicts.",
+            "They are all set up the same way: look for large amounts, only record, never block.",
+            "Together they had 12,400 matches in 30 days and blocked none."
+          ]
+        },
+        {
+          "heading": "The plan in one sentence",
+          "callout": true,
+          "text": "Merge the templates into one policy that behaves exactly like today, then delete the old ones."
+        }
+      ]
+    },
+    {
+      "type": "flow",
+      "name": "How it merges",
+      "subtitle": "One policy (the container) holding 2 rules (the checks inside it).",
+      "lines": [
+        "TODAY: 6 policies              AFTER: 1 policy “Contoso personal data”",
+        "──────────────────             ─────────────────────────────────────────",
+        "GDPR ───────┐                  ┌─ rule 1: Personal data — Europe",
+        "UK ─────────┘─────────────────►│",
+        "US PII ─────┐                  │",
+        "Canada ─────┴─────────────────►└─ rule 2: Personal data — rest of world",
+        "",
+        "Old test policy ──► drop (never triggered)"
+      ],
+      "note": "Both rules behave exactly like the old templates: same data, same amounts, still only recording."
+    },
+    {
+      "type": "table",
+      "name": "Each old policy",
+      "title": "What happens to each old policy",
+      "headers": ["Old policy", "Matches (30 days)", "Where it goes", "Afterwards"],
+      "widths": [36, 12, 44, 22],
+      "rows": [
+        ["GDPR Enhanced", 6200, "Merged policy → “Personal data — Europe”", "Delete after the switch"],
+        ["UK Data Protection", 3100, "Merged policy → “Personal data — Europe”", "Delete after the switch"],
+        ["US PII", 2900, "Merged policy → “Personal data — rest of world”", "Delete after the switch"],
+        ["Canada PII", 200, "Merged policy → “Personal data — rest of world”", "Delete after the switch"],
+        ["Old test policy", 0, "Drop", "Delete now"]
+      ]
+    },
+    {
+      "type": "steps",
+      "name": "Steps",
+      "headers": ["Step", "What", "What users notice", "How long"],
+      "widths": [7, 72, 20, 12],
+      "rows": [
+        [1, "Create the merged policy in SIMULATION mode, next to the old ones", "Nothing", "1 day"],
+        [2, "Let it run and compare with the old templates", "Nothing", "2 weeks"],
+        [3, "Switch the merged policy on, then turn off the old ones", "Nothing", "1 day"],
+        [4, "Wait 2 weeks in case we need to roll back, then delete the old policies", "Nothing", "2 weeks"]
+      ]
+    },
+    {
+      "type": "decisions",
+      "name": "Decisions",
+      "title": "Decisions needed",
+      "headers": ["#", "Question", "Suggestion", "Your answer"],
+      "widths": [5, 64, 40, 26],
+      "rows": [
+        [1, "Who does the laptop part apply to?", "Everyone — it only records", ""],
+        [2, "Drop the old test policy?", "Yes", ""]
+      ]
+    }
+  ]
+}

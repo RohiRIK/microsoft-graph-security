@@ -1,0 +1,15 @@
+{
+  "name": "rohirik-m365-security",
+  "description": "Microsoft 365 security investigation skills for Claude Code and other MCP-compatible agents.",
+  "owner": {
+    "name": "Rohi Rikman",
+    "url": "https://github.com/RohiRIK"
+  },
+  "plugins": [
+    {
+      "name": "microsoft-graph-security",
+      "source": "./plugins/microsoft-graph-security",
+      "description": "Cross-plane Microsoft 365 security workflows (identity, devices, mail, Defender, Purview) with read-only defaults and confirm-gated writes."
+    }
+  ]
+}

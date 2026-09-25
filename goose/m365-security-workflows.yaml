@@ -1,0 +1,79 @@
+version: "1.0.0"
+title: Microsoft 365 Security Workflows
+description: >-
+  Routes Microsoft 365 security, identity, device, mail, compliance, triage and
+  operational requests to this repository's canonical skills. Read-only by
+  default, with explicit human confirmation for writes.
+
+instructions: |
+  You are running the Microsoft Graph security workflow set. The substantive
+  procedures live in this repository's canonical skills — read the one that
+  matches the request rather than improvising a procedure here.
+
+  Skill routing (paths are relative to the repository root):
+
+  - Cross-plane investigation, tenant posture, risky sign-ins, MFA, privilege,
+    offboarding, exfiltration, insider risk, legal-hold gaps:
+      skills/cloud-security-engineer/SKILL.md
+  - Operational response, JIT access, access-denied triage, compliance
+    remediation, phishing purge, hostile offboarding, spearphish blast radius,
+    service-principal containment:
+      skills/security-ops/SKILL.md
+  - Gateway setup or startup: skills/gateway-bootstrap/SKILL.md
+  - Auth, tenants, scopes, consent, credentials: skills/auth-ops/SKILL.md
+  - Intune configuration drift: skills/analyze-configuration/SKILL.md
+  - Application governance: skills/app-governance/SKILL.md
+  - Purview operations: skills/purview-compliance-ops/SKILL.md
+  - Defender posture: skills/defender-posture-reporting/SKILL.md
+  - Session hygiene: skills/session-hygiene-audit/SKILL.md
+  - Gateway disconnect / read-only verification:
+      skills/gateway-disconnect-check/SKILL.md
+
+  Non-negotiable safety rules:
+
+  1. Open every investigation by naming the tenant from the gateway session
+     resource, with its display name and GUID. Never invent a tenant, user,
+     profile, or result. If the session resource is unavailable, say so.
+  2. Read-only by default. A write tool is registered only when its package
+     write opt-in is enabled, and destructive or critical tools still require
+     an explicit `confirm: true` at call time. Show the preview to the human
+     and get explicit approval before re-calling with `confirm: true`. Never
+     infer approval from a request to investigate or plan.
+  3. Never print tokens, secrets, or unmasked personal data. Keep credentials
+     and tenant configuration out of this recipe.
+  4. If a plane is unavailable or returns 403, state the missing evidence and
+     continue only with what was actually returned.
+  5. Do not choose or switch a client tenant, grant consent, enable writes, or
+     take an external action on the user's behalf.
+
+prompt: |
+  Use the Microsoft 365 security workflow skills for this request: {{ query }}
+
+activities:
+  - "message: **Microsoft 365 security workflows** — read-only by default. Every investigation names its tenant first. Writes need explicit human approval."
+  - "Triage this user across identity, devices and compliance: {{ user_or_device }}"
+  - "Give me a tenant posture scorecard across all planes: {{ tenant_or_scope }}"
+  - "Why is this device noncompliant, and what is blocking it: {{ device_name }}"
+  - "Review this enterprise app's permissions and blast radius: {{ app_id }}"
+
+parameters:
+  - key: query
+    input_type: string
+    requirement: user_prompt
+    description: The security question, user, device, app or scope to investigate
+  - key: user_or_device
+    input_type: string
+    requirement: user_prompt
+    description: User principal name or device name to triage
+  - key: tenant_or_scope
+    input_type: string
+    requirement: user_prompt
+    description: Tenant name or scope for the posture review
+  - key: device_name
+    input_type: string
+    requirement: user_prompt
+    description: Device name or ID to check
+  - key: app_id
+    input_type: string
+    requirement: user_prompt
+    description: Enterprise application (client) ID to review

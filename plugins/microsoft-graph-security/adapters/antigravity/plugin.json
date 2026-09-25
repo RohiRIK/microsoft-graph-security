@@ -1,0 +1,5 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "microsoft-graph-security",
+  "description": "Portable Microsoft 365 security workflows for MCP-compatible agents. Routes to the repository's canonical skills; read-only by default with explicit confirmation for writes."
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "microsoft-graph-security",
+  "version": "0.4.0",
+  "description": "Portable Microsoft 365 security workflows for MCP-compatible agents. Routes to the repository's canonical skills; read-only by default with explicit confirmation for writes.",
+  "author": {
+    "name": "Rohi Rikman"
+  },
+  "homepage": "https://github.com/RohiRIK/microsoft-graph-mcp-servers",
+  "repository": "https://github.com/RohiRIK/microsoft-graph-mcp-servers.git",
+  "license": "MIT",
+  "keywords": [
+    "microsoft-365",
+    "security",
+    "mcp",
+    "entra-id",
+    "intune",
+    "defender",
+    "purview"
+  ]
+}

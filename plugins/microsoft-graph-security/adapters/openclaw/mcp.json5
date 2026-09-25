@@ -1,0 +1,15 @@
+{
+  // Copy the `mcp` object into the OpenClaw config yourself.
+  // Keep command and cwd relative to the OpenClaw workspace or use an
+  // explicitly reviewed absolute path. Do not put credentials here.
+  "mcp": {
+    "servers": {
+      "microsoft-graph": {
+        "type": "stdio",
+        "command": "bun",
+        "args": ["run", "gateway_mcp/src/index.ts"],
+        "cwd": "."
+      }
+    }
+  }
+}
