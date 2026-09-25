@@ -4,9 +4,11 @@ Portable security-investigation workflows packaged once for **Claude Code**,
 **Antigravity (`agy`)**, **Goose**, **Pi**, **OpenCode**, **OpenClaw**, and any
 MCP-compatible agent.
 
-**To use the workflows — paste this into your agent, one line:**
+**To use the workflows — copy this into your agent:**
 
-> Install the microsoft-graph-security plugin, then route my request through `skills/m365-security-workflows/SKILL.md` to the canonical skill for it; this is a read-only-by-default Microsoft 365 MCP suite where writes need an explicit `confirm: true`, and every answer must open by naming the tenant from `gateway://session`.
+```text
+Install the microsoft-graph-security plugin, route my request through skills/m365-security-workflows/SKILL.md to the canonical skill for it, and never improvise a procedure. This suite is read-only by default, writes need an explicit confirm: true, and every answer must open by naming the tenant from gateway://session.
+```
 
 ![One workflow package, many agents](plugins/microsoft-graph-security/assets/plugin-host-adapters.svg)
 
@@ -18,9 +20,15 @@ MCP-compatible agent.
 | `antigravity/microsoft-graph-security/` | Antigravity `agy` |
 | `goose/m365-security-workflows.yaml` | Goose |
 
-## Install — one line
+## Quick install
 
-> Before you install anything, read `INSTALL-AGENTS.md` in this repository, find the section for the agent you actually are, and follow exactly that — it carries the command, the verification, the rollback and the honest limits for all **47 hosts**, and it tells you plainly which ones you must not run.
+Copy this one line into your agent:
+
+```bash
+claude plugin marketplace add RohiRIK/microsoft-graph-security && claude plugin install microsoft-graph-security@rohirik-m365-security
+```
+
+Not Claude Code? Open [`INSTALL-AGENTS.md`](INSTALL-AGENTS.md) and follow the section for the agent you are — 47 hosts, each with the command, the verification, the rollback, and the honest limits.
 
 ## Safety
 

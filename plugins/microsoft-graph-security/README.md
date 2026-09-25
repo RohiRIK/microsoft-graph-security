@@ -1,8 +1,10 @@
 # Portable Microsoft 365 security workflows
 
-**To use the workflows — paste this into your agent, one line:**
+**To use the workflows — copy this into your agent:**
 
-> Install the microsoft-graph-security plugin, then route my request through `skills/m365-security-workflows/SKILL.md` to the canonical skill for it; this is a read-only-by-default Microsoft 365 MCP suite where writes need an explicit `confirm: true`, and every answer must open by naming the tenant from `gateway://session`.
+```text
+Install the microsoft-graph-security plugin, route my request through skills/m365-security-workflows/SKILL.md to the canonical skill for it, and never improvise a procedure. This suite is read-only by default, writes need an explicit confirm: true, and every answer must open by naming the tenant from gateway://session.
+```
 
 This package is the host-neutral workflow package for this repository. The substantive instructions stay in the repository's canonical `skills/`; host adapters only route to them and describe the host's supported native package or MCP format.
 
@@ -21,14 +23,17 @@ bun run build:portable-plugin
 
 Both copy the canonical `skills/`; neither is checked in.
 
-## Install and load
+## Quick install
 
-**Paste this into your agent — one line:**
+Copy this one line into your agent:
 
-> Before you install anything, read `INSTALL-AGENTS.md` in this package, find the section for the agent you actually are, and follow exactly that — it has the command, the verification, the rollback, and the honest limits for every supported host.
+```bash
+claude plugin marketplace add RohiRIK/microsoft-graph-security && claude plugin install microsoft-graph-security@rohirik-m365-security
+```
 
-The full per-host instructions live in `INSTALL-AGENTS.md` and
-`adapters/host-matrix.md`. This file deliberately does not repeat them.
+Not Claude Code? Open `INSTALL-AGENTS.md` and follow the section for the agent
+you are — 47 hosts, each with the command, the verification, the rollback, and
+the honest limits. This file deliberately does not repeat them.
 
 ```bash
 # Antigravity CLI (agy)
