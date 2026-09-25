@@ -4,7 +4,7 @@ Portable security-investigation workflows packaged once for **Claude Code**,
 **Antigravity (`agy`)**, **Goose**, **Pi**, **OpenCode**, **OpenClaw**, and any
 MCP-compatible agent.
 
-**Paste this into your agent — one line, no setup:**
+**To use the workflows — paste this into your agent, one line:**
 
 > Install the microsoft-graph-security plugin, then route my request through `skills/m365-security-workflows/SKILL.md` to the canonical skill for it; this is a read-only-by-default Microsoft 365 MCP suite where writes need an explicit `confirm: true`, and every answer must open by naming the tenant from `gateway://session`.
 
@@ -18,7 +18,15 @@ MCP-compatible agent.
 | `antigravity/microsoft-graph-security/` | Antigravity `agy` |
 | `goose/m365-security-workflows.yaml` | Goose |
 
-## Claude Code
+**To install — paste this into your agent, one line, it picks the right command for you:**
+
+> Fetch https://github.com/RohiRIK/microsoft-graph-security, read the Install section below, and run the exact command for the agent you actually are — Claude Code, Antigravity, Goose, Pi, OpenCode, OpenClaw, or plain MCP.
+
+Everything below is the reference that line points at.
+
+## Install reference (per host)
+
+### Claude Code
 
 ```bash
 claude plugin marketplace add RohiRIK/microsoft-graph-security
