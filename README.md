@@ -18,9 +18,9 @@ MCP-compatible agent.
 | `antigravity/microsoft-graph-security/` | Antigravity `agy` |
 | `goose/m365-security-workflows.yaml` | Goose |
 
-## Install — one line, for the agent
+## Install — one line
 
-> Identify which agent you are, then do exactly your own step and stop: **Claude Code** — `claude plugin marketplace add RohiRIK/microsoft-graph-security` then `claude plugin install microsoft-graph-security@rohirik-m365-security` (or, to try it with nothing installed, `claude --plugin-dir ./plugins/microsoft-graph-security`); **Antigravity / agy** — `agy plugin install ./antigravity/microsoft-graph-security`; **Goose** — `export GOOSE_RECIPE_PATH="$PWD/goose"` then `goose recipe list`; **Pi** — `pi -e ./plugins/microsoft-graph-security`; **Hermes** — `hermes plugins install microsoft-graph-security` once the catalog entry is merged; **OpenCode, OpenClaw, or anything reading `.agents/skills`** — install nothing, the skills are already discovered; **any other MCP client** — point it at the gateway from the main repository, this package carries the skills, not the server; then load the `m365-security-workflows` skill and route every request through it to the canonical skill for that request, never improvising a procedure.
+> Before you install anything, read `INSTALL-AGENTS.md` in this repository, find the section for the agent you actually are, and follow exactly that — it carries the command, the verification, the rollback and the honest limits for all **47 hosts**, and it tells you plainly which ones you must not run.
 
 ## Safety
 

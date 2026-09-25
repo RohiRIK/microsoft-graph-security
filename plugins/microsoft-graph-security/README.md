@@ -23,13 +23,12 @@ Both copy the canonical `skills/`; neither is checked in.
 
 ## Install and load
 
-**Paste this into your agent — one line, it picks the right command for you:**
+**Paste this into your agent — one line:**
 
-> Read `adapters/host-matrix.md`, then run the install line for the agent you actually are — it lists every supported host, which need a package, which are MCP-only, and which are broken.
+> Before you install anything, read `INSTALL-AGENTS.md` in this package, find the section for the agent you actually are, and follow exactly that — it has the command, the verification, the rollback, and the honest limits for every supported host.
 
-The full per-host commands are below, and in `adapters/host-matrix.md`.
-
-### Validate (read-only, writes nothing)
+The full per-host instructions live in `INSTALL-AGENTS.md` and
+`adapters/host-matrix.md`. This file deliberately does not repeat them.
 
 ```bash
 # Antigravity CLI (agy)
