@@ -18,39 +18,9 @@ MCP-compatible agent.
 | `antigravity/microsoft-graph-security/` | Antigravity `agy` |
 | `goose/m365-security-workflows.yaml` | Goose |
 
-**To install — paste this into your agent, one line, it picks the right command for you:**
+## Install — one line, for the agent
 
-> Fetch https://github.com/RohiRIK/microsoft-graph-security, read the Install section below, and run the exact command for the agent you actually are — Claude Code, Antigravity, Goose, Pi, OpenCode, OpenClaw, or plain MCP.
-
-Everything below is the reference that line points at.
-
-## Install reference (per host)
-
-### Claude Code
-
-```bash
-claude plugin marketplace add RohiRIK/microsoft-graph-security
-claude plugin install microsoft-graph-security@rohirik-m365-security
-```
-
-Load without installing:
-
-```bash
-claude --plugin-dir ./plugins/microsoft-graph-security
-```
-
-## Antigravity
-
-```bash
-agy plugin install ./antigravity/microsoft-graph-security
-```
-
-## Goose
-
-```bash
-export GOOSE_RECIPE_PATH="$PWD/goose"
-goose recipe list
-```
+> Identify which agent you are, then do exactly your own step and stop: **Claude Code** — `claude plugin marketplace add RohiRIK/microsoft-graph-security` then `claude plugin install microsoft-graph-security@rohirik-m365-security` (or, to try it with nothing installed, `claude --plugin-dir ./plugins/microsoft-graph-security`); **Antigravity / agy** — `agy plugin install ./antigravity/microsoft-graph-security`; **Goose** — `export GOOSE_RECIPE_PATH="$PWD/goose"` then `goose recipe list`; **Pi** — `pi -e ./plugins/microsoft-graph-security`; **Hermes** — `hermes plugins install microsoft-graph-security` once the catalog entry is merged; **OpenCode, OpenClaw, or anything reading `.agents/skills`** — install nothing, the skills are already discovered; **any other MCP client** — point it at the gateway from the main repository, this package carries the skills, not the server; then load the `m365-security-workflows` skill and route every request through it to the canonical skill for that request, never improvising a procedure.
 
 ## Safety
 
