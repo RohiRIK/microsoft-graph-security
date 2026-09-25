@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><style>
+  .bg{fill:#081525}.panel{fill:#10253d;stroke:#2d5d85;stroke-width:2}.panel2{fill:#0d1e31;stroke:#3b729f;stroke-width:2}.title{fill:#f4f8fc;font:700 40px Arial,sans-serif}.sub{fill:#b6cadb;font:400 21px Arial,sans-serif}.label{fill:#f4f8fc;font:700 23px Arial,sans-serif}.small{fill:#c8d8e6;font:400 18px Arial,sans-serif}.tiny{fill:#9bb5ca;font:400 15px Arial,sans-serif}.accent{fill:#47c7ff}.violet{fill:#9b7bff}.amber{fill:#ffbd59}.green{fill:#4dd4a8}.line{stroke:#6ccff6;stroke-width:4;fill:none}.dash{stroke:#8baac1;stroke-width:3;stroke-dasharray:10 8;fill:none}.arrow{fill:#6ccff6}.tag{fill:#183b59;stroke:#4f96c4;stroke-width:1.5}.guard{fill:#14293d;stroke:#ffbd59;stroke-width:3}.deny{fill:#362338;stroke:#ff8ea1;stroke-width:3}
+</style><rect class="bg" width="1600" height="900"/>
+<text class="title" x="70" y="70">New Tool Registration Contract</text><text class="sub" x="70" y="105">A tool is complete only when every contract edge is present</text>
+<rect class="panel" x="125" y="250" width="235" height="125" rx="16"/><text class="label" x="170" y="300">1. Schema</text><text class="small" x="150" y="332">tools/schema.ts</text>
+<path class="line" d="M360 312h110"/><path class="arrow" d="M460 302h20l-10 16z"/>
+<rect class="guard" x="480" y="250" width="235" height="125" rx="16"/><text class="label" x="520" y="300">2. Risk first</text><text class="small" x="513" y="332">guardrails/risk.ts</text>
+<path class="line" d="M715 312h110"/><path class="arrow" d="M815 302h20l-10 16z"/>
+<rect class="panel" x="835" y="250" width="300" height="125" rx="16"/><text class="label" x="885" y="300">3. Register</text><text class="small" x="860" y="332">withGuardrail() wrapper</text>
+<path class="line" d="M1135 312h110"/><path class="arrow" d="M1235 302h20l-10 16z"/>
+<rect class="panel" x="1255" y="250" width="230" height="125" rx="16"/><text class="label" x="1290" y="300">4. Catalog</text><text class="small" x="1282" y="332">TOOL_CATALOG</text>
+<path class="line" d="M1370 375v130H800"/><path class="arrow" d="M790 495h20l-10 16z"/>
+<rect class="panel2" x="630" y="510" width="340" height="105" rx="16"/><text class="label" x="710" y="552">5. Tests</text><text class="small" x="675" y="585">coverage + permissions + behavior</text>
+<path class="line" d="M800 615v75"/><path class="arrow" d="M790 680h20l-10 16z"/>
+<polygon class="guard" points="800,700 965,790 800,880 635,790"/><text class="label" x="697" y="797">Startup coverage passes?</text>
+<path class="line" d="M635 790H420"/><path class="arrow" d="M410 780h20l-10 16z"/><text class="tiny" x="510" y="770">missing risk</text><rect class="deny" x="105" y="745" width="305" height="90" rx="14"/><text class="label" x="165" y="785">Refuse to boot</text><text class="small" x="135" y="813">verifyGuardrailCoverage()</text>
+<path class="line" d="M965 790h175"/><path class="arrow" d="M1130 780h20l-10 16z"/><text class="tiny" x="1035" y="770">complete</text><rect class="tag" x="1150" y="745" width="300" height="90" rx="14"/><text class="label" x="1202" y="785">Tool available</text><text class="small" x="1184" y="813">local or namespaced gateway</text>
+</svg>

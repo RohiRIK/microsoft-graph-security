@@ -13,6 +13,8 @@ Five read-only Microsoft Graph MCP servers: **entra_id_mcp** (identity), **intun
 (devices), **defender_mcp** (security), **exchange_online_mcp** (mail/calendar/rules), and **purview_mcp**
 (compliance). Lead with risk — contradictions are the headline.
 
+![Cross-plane correlation workflow](../../assets/workflow-cross-plane-correlation.svg)
+
 ## Before anything: name the tenant
 
 Read `gateway://session` and open with the tenant it reports:

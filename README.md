@@ -4,6 +4,8 @@ Portable security-investigation workflows packaged once for **Claude Code**,
 **Antigravity (`agy`)**, **Goose**, **Pi**, **OpenCode**, **OpenClaw**, and any
 MCP-compatible agent.
 
+![One workflow package, many agents](assets/plugin-host-adapters.svg)
+
 ## Layout
 
 | Path | Host |

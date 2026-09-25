@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><style>
+  .bg{fill:#081525}.panel{fill:#10253d;stroke:#2d5d85;stroke-width:2}.panel2{fill:#0d1e31;stroke:#3b729f;stroke-width:2}.title{fill:#f4f8fc;font:700 40px Arial,sans-serif}.sub{fill:#b6cadb;font:400 21px Arial,sans-serif}.label{fill:#f4f8fc;font:700 23px Arial,sans-serif}.small{fill:#c8d8e6;font:400 18px Arial,sans-serif}.tiny{fill:#9bb5ca;font:400 15px Arial,sans-serif}.amber{fill:#ffbd59}.green{fill:#4dd4a8}.violet{fill:#9b7bff}.line{stroke:#6ccff6;stroke-width:4;fill:none}.dash{stroke:#8baac1;stroke-width:3;stroke-dasharray:10 8;fill:none}.arrow{fill:#6ccff6}.tag{fill:#183b59;stroke:#4f96c4;stroke-width:1.5}.guard{fill:#14293d;stroke:#ffbd59;stroke-width:3}.zero{fill:#0f2e2a;stroke:#4dd4a8;stroke-width:3}
+</style><rect class="bg" width="1600" height="900"/>
+<text class="title" x="70" y="70">One Workflow Package, Many Agents</text><text class="sub" x="70" y="105">Canonical skills stay single-copy; host adapters only route to them</text>
+
+<rect class="panel" x="70" y="150" width="330" height="230" rx="20"/>
+<text class="label" x="105" y="196">The one source</text>
+<text class="small" x="105" y="230">skills/</text>
+<text class="small" x="105" y="258">19 Agent Skills</text>
+<text class="small" x="105" y="284">name + description + body</text>
+<text class="tiny" x="105" y="316">Substantive procedures live here and</text>
+<text class="tiny" x="105" y="338">nowhere else. Adapters never</text>
+<text class="tiny" x="105" y="360">restate a workflow.</text>
+
+<rect class="panel" x="470" y="150" width="660" height="230" rx="20"/>
+<text class="label" x="505" y="196">Host adapters — routing only</text>
+<text class="small" x="505" y="230">plugin.json (Agent Plugins v1) · .claude-plugin/plugin.json (Claude)</text>
+<text class="small" x="505" y="258">pi.skills (Pi) · recipe .yaml (Goose) · plugin.json (Antigravity)</text>
+<text class="small" x="505" y="286">opencode.json / mcp.servers — the MCP fallback</text>
+<text class="tiny" x="505" y="320">Two manifests, on purpose: Antigravity's schema is additionalProperties:false and</text>
+<text class="tiny" x="505" y="342">accepts only name + description, so no single file can satisfy both it and</text>
+<text class="tiny" x="505" y="364">Agent Plugins v1's required $schema.</text>
+
+<rect class="zero" x="1200" y="150" width="330" height="230" rx="20"/>
+<text class="label" x="1235" y="196">Zero-install path</text>
+<text class="small" x="1235" y="230">.agents/skills → ../skills</text>
+<text class="small" x="1235" y="258">.claude/skills</text>
+<text class="small" x="1235" y="284">.opencode/skills</text>
+<text class="tiny" x="1235" y="316">Six hosts read .agents/skills.</text>
+<text class="tiny" x="1235" y="338">One symlink serves all of them —</text>
+<text class="tiny" x="1235" y="360">no install at all.</text>
+
+<path class="line" d="M400 265h70M1130 265h70"/>
+<path class="arrow" d="M462 253l12 12-12 12zM1192 253l12 12-12 12z"/>
+
+<rect class="panel2" x="70" y="440" width="355" height="130" rx="18"/>
+<text class="label" x="105" y="482">Claude Code</text>
+<text class="small" x="105" y="514">marketplace → install</text>
+<text class="tiny" x="105" y="540">or --plugin-dir, no install</text>
+
+<rect class="panel2" x="455" y="440" width="355" height="130" rx="18"/>
+<text class="label" x="490" y="482">Antigravity (agy)</text>
+<text class="small" x="490" y="514">agy plugin install</text>
+<text class="tiny" x="490" y="540">no marketplace mechanism exists</text>
+
+<rect class="panel2" x="840" y="440" width="355" height="130" rx="18"/>
+<text class="label" x="875" y="482">Goose</text>
+<text class="small" x="875" y="514">GOOSE_RECIPE_PATH</text>
+<text class="tiny" x="875" y="540">recipe .yaml, never .yml</text>
+
+<rect class="panel2" x="1225" y="440" width="305" height="130" rx="18"/>
+<text class="label" x="1260" y="482">Hermes</text>
+<text class="small" x="1260" y="514">Agent Plugins v1</text>
+<text class="tiny" x="1260" y="540">pinned catalog entry</text>
+
+<rect class="panel2" x="70" y="610" width="355" height="130" rx="18"/>
+<text class="label" x="105" y="652">OpenCode</text>
+<text class="small" x="105" y="684">opencode debug skill</text>
+<text class="tiny" x="105" y="710">JSON output — count locations,</text>
+<text class="tiny" x="105" y="732">not grep for a skill name</text>
+
+<rect class="panel2" x="455" y="610" width="355" height="130" rx="18"/>
+<text class="label" x="490" y="652">Pi</text>
+<text class="small" x="490" y="684">pi -e ./plugin</text>
+<text class="tiny" x="490" y="710">skills only, no extension</text>
+
+<rect class="panel2" x="840" y="610" width="355" height="130" rx="18"/>
+<text class="label" x="875" y="652">OpenClaw</text>
+<text class="small" x="875" y="684">workspace skill link</text>
+<text class="tiny" x="875" y="710">refuses to replace a real dir</text>
+
+<rect class="panel2" x="1225" y="610" width="305" height="130" rx="18"/>
+<text class="label" x="1260" y="652">Everything else</text>
+<text class="small" x="1260" y="684">MCP fallback</text>
+<text class="tiny" x="1260" y="710">no invented manifests</text>
+
+<path class="dash" d="M235 380v55M632 380v55M1017 380v55M1377 380v55M235 570v35M632 570v35M1017 570v35M1377 570v35"/>
+
+<rect class="guard" x="70" y="790" width="1460" height="75" rx="16"/>
+<text class="small" x="105" y="824">Safety travels with the workflow, not the host: name the tenant first · read-only by default · confirm: true for writes · never invent data.</text>
+<text class="small" x="105" y="850">Every adapter is validated by its own native tool, and a passing validator is never reported as proof a host loaded it.</text>
+</svg>

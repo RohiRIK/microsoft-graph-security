@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><style>
+  .bg{fill:#081525}.panel{fill:#10253d;stroke:#2d5d85;stroke-width:2}.panel2{fill:#0d1e31;stroke:#3b729f;stroke-width:2}.title{fill:#f4f8fc;font:700 40px Arial,sans-serif}.sub{fill:#b6cadb;font:400 21px Arial,sans-serif}.label{fill:#f4f8fc;font:700 23px Arial,sans-serif}.small{fill:#c8d8e6;font:400 18px Arial,sans-serif}.tiny{fill:#9bb5ca;font:400 15px Arial,sans-serif}.accent{fill:#47c7ff}.violet{fill:#9b7bff}.amber{fill:#ffbd59}.green{fill:#4dd4a8}.line{stroke:#6ccff6;stroke-width:4;fill:none}.dash{stroke:#8baac1;stroke-width:3;stroke-dasharray:10 8;fill:none}.arrow{fill:#6ccff6}.tag{fill:#183b59;stroke:#4f96c4;stroke-width:1.5}.guard{fill:#14293d;stroke:#ffbd59;stroke-width:3}.deny{fill:#362338;stroke:#ff8ea1;stroke-width:3}
+</style><rect class="bg" width="1600" height="900"/>
+<text class="title" x="70" y="70">Microsoft Graph MCP Servers — System Architecture</text><text class="sub" x="70" y="105">Five Graph planes, one gateway endpoint, and cross-plane security skills</text>
+<rect class="panel" x="260" y="145" width="1080" height="110" rx="18"/><text class="label" x="315" y="192">AI assistant + security skills</text><text class="small" x="315" y="225">cloud-security-engineer · security-ops · gateway-bootstrap</text>
+<path class="line" d="M800 255 V320"/><path class="arrow" d="M790 310h20l-10 16z"/>
+<rect class="panel2" x="220" y="335" width="1160" height="125" rx="18"/><text class="label" x="270" y="385">gateway_mcp</text><text class="small" x="270" y="418">One namespaced MCP endpoint · auth broker · JSON-RPC proxy · tenant-bound session</text>
+<path class="line" d="M350 460V535M575 460V535M800 460V535M1025 460V535M1250 460V535"/>
+<g><rect class="panel" x="235" y="550" width="230" height="115" rx="14"/><text class="label" x="260" y="595">entra_id_mcp</text><text class="small" x="260" y="625">Identity</text></g>
+<g><rect class="panel" x="460" y="550" width="230" height="115" rx="14"/><text class="label" x="493" y="595">intune_mcp</text><text class="small" x="493" y="625">Devices / MDM</text></g>
+<g><rect class="panel" x="685" y="550" width="230" height="115" rx="14"/><text class="label" x="698" y="595">exchange_mcp</text><text class="small" x="698" y="625">Mail / calendar</text></g>
+<g><rect class="panel" x="910" y="550" width="230" height="115" rx="14"/><text class="label" x="935" y="595">defender_mcp</text><text class="small" x="935" y="625">Security alerts</text></g>
+<g><rect class="panel" x="1135" y="550" width="230" height="115" rx="14"/><text class="label" x="1168" y="595">purview_mcp</text><text class="small" x="1168" y="625">Compliance</text></g>
+<path class="line" d="M350 665v55h900v-55"/><path class="line" d="M800 720v55"/><path class="arrow" d="M790 765h20l-10 16z"/>
+<rect class="panel2" x="450" y="785" width="700" height="65" rx="14"/><text class="label" x="540" y="828">Microsoft Graph API + optional Defender Endpoint API</text>
+<rect class="tag" x="65" y="700" width="260" height="95" rx="12"/><text class="label" x="98" y="740">mcp_shared</text><text class="tiny" x="98" y="770">profiles · keyring · encrypted audit</text><path class="dash" d="M325 748H450"/>
+</svg>

@@ -9,6 +9,8 @@ metadata:
 
 # SecurityOps
 
+![Write confirmation gate](../../assets/workflow-write-confirmation-gate.svg)
+
 Executable versions of the business workflows in `docs/operational-flows/`. Each workflow maps plain-language steps to concrete namespaced MCP tool calls through the gateway (`entra.*`, `intune.*`, `exchange.*`, `defender.*`, `purview.*`), names the cross-plane flag rules that apply, and marks every write with its confirmation gate.
 
 ## Workflow Routing

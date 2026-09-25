@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><style>
+  .bg{fill:#081525}.panel{fill:#10253d;stroke:#2d5d85;stroke-width:2}.panel2{fill:#0d1e31;stroke:#3b729f;stroke-width:2}.title{fill:#f4f8fc;font:700 40px Arial,sans-serif}.sub{fill:#b6cadb;font:400 21px Arial,sans-serif}.label{fill:#f4f8fc;font:700 23px Arial,sans-serif}.small{fill:#c8d8e6;font:400 18px Arial,sans-serif}.tiny{fill:#9bb5ca;font:400 15px Arial,sans-serif}.accent{fill:#47c7ff}.violet{fill:#9b7bff}.amber{fill:#ffbd59}.green{fill:#4dd4a8}.line{stroke:#6ccff6;stroke-width:4;fill:none}.dash{stroke:#8baac1;stroke-width:3;stroke-dasharray:10 8;fill:none}.arrow{fill:#6ccff6}.tag{fill:#183b59;stroke:#4f96c4;stroke-width:1.5}.guard{fill:#14293d;stroke:#ffbd59;stroke-width:3}.deny{fill:#362338;stroke:#ff8ea1;stroke-width:3}
+</style><rect class="bg" width="1600" height="900"/>
+<text class="title" x="70" y="70">Backend Component Map</text><text class="sub" x="70" y="105">The shared layout repeated across each plane-specific MCP backend</text>
+<rect class="panel" x="70" y="145" width="590" height="650" rx="22"/><text class="label" x="110" y="195">Per-backend package</text>
+<rect class="panel2" x="110" y="225" width="220" height="110" rx="14"/><text class="label" x="145" y="270">index.ts</text><text class="small" x="145" y="302">MCP entry point</text>
+<rect class="panel2" x="380" y="225" width="220" height="110" rx="14"/><text class="label" x="415" y="270">config.ts</text><text class="small" x="415" y="302">mode + allowlist</text>
+<rect class="panel2" x="110" y="380" width="220" height="110" rx="14"/><text class="label" x="145" y="425">tools/</text><text class="small" x="145" y="457">schema + register</text>
+<rect class="guard" x="380" y="380" width="220" height="110" rx="14"/><text class="label" x="405" y="425">guardrails/</text><text class="small" x="405" y="457">risk + HITL + limits</text>
+<rect class="panel2" x="110" y="535" width="220" height="110" rx="14"/><text class="label" x="145" y="580">catalog.ts</text><text class="small" x="145" y="612">tool + permissions</text>
+<rect class="panel2" x="380" y="535" width="220" height="110" rx="14"/><text class="label" x="415" y="580">security.ts</text><text class="small" x="415" y="612">redaction + tenant</text>
+<rect class="panel2" x="245" y="685" width="220" height="75" rx="14"/><text class="label" x="276" y="730">audit/ + graph/</text>
+<path class="dash" d="M330 280H380M220 335V380M490 335V380M220 490V535M490 490V535M220 645l135 40M490 645l-135 40"/>
+<rect class="panel" x="750" y="145" width="780" height="650" rx="22"/><text class="label" x="790" y="195">Gateway-specific composition</text>
+<rect class="panel2" x="800" y="245" width="260" height="120" rx="14"/><text class="label" x="850" y="292">backends/</text><text class="small" x="828" y="324">registry · catalogs · proxy</text>
+<rect class="panel2" x="1210" y="245" width="260" height="120" rx="14"/><text class="label" x="1290" y="292">auth/</text><text class="small" x="1242" y="324">MSAL providers + broker</text>
+<rect class="panel2" x="800" y="455" width="260" height="120" rx="14"/><text class="label" x="870" y="502">cache.ts</text><text class="small" x="842" y="534">tenant-bound cache identity</text>
+<rect class="panel2" x="1210" y="455" width="260" height="120" rx="14"/><text class="label" x="1270" y="502">revoke.ts</text><text class="small" x="1242" y="534">ends gateway session</text>
+<rect class="tag" x="970" y="660" width="330" height="85" rx="14"/><text class="label" x="1015" y="705">Namespaced tool endpoint</text>
+<path class="line" d="M930 365v70M1340 365v70M930 575l130 85M1340 575l-130 85"/>
+</svg>

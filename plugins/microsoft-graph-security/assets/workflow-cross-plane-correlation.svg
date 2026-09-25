@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><style>
+  .bg{fill:#081525}.panel{fill:#10253d;stroke:#2d5d85;stroke-width:2}.panel2{fill:#0d1e31;stroke:#3b729f;stroke-width:2}.title{fill:#f4f8fc;font:700 40px Arial,sans-serif}.sub{fill:#b6cadb;font:400 21px Arial,sans-serif}.label{fill:#f4f8fc;font:700 23px Arial,sans-serif}.small{fill:#c8d8e6;font:400 18px Arial,sans-serif}.tiny{fill:#9bb5ca;font:400 15px Arial,sans-serif}.accent{fill:#47c7ff}.violet{fill:#9b7bff}.amber{fill:#ffbd59}.green{fill:#4dd4a8}.pink{fill:#ff8ea1}.line{stroke:#6ccff6;stroke-width:4;fill:none}.dash{stroke:#8baac1;stroke-width:3;stroke-dasharray:10 8;fill:none}.arrow{fill:#6ccff6}.tag{fill:#183b59;stroke:#4f96c4;stroke-width:1.5}.guard{fill:#14293d;stroke:#ffbd59;stroke-width:3}.deny{fill:#362338;stroke:#ff8ea1;stroke-width:3}
+</style><rect class="bg" width="1600" height="900"/>
+<text class="title" x="70" y="70">Cross-Plane Correlation Workflow</text><text class="sub" x="70" y="105">cloud-security-engineer — every investigation, from question to flagged findings</text>
+
+<rect class="guard" x="70" y="140" width="1460" height="80" rx="18"/>
+<text class="label" x="105" y="176">Step 0 — Name the tenant first</text>
+<text class="small" x="105" y="203">Read gateway://session and open with the tenant display name and GUID. Never invent a tenant, user, profile, or result.</text>
+
+<rect class="panel" x="70" y="255" width="330" height="150" rx="20"/>
+<text class="label" x="105" y="300">1. Question</text>
+<text class="small" x="105" y="332">"Triage jane@"</text>
+<text class="small" x="105" y="358">U1–U25 scenario</text>
+<text class="tiny" x="105" y="384">Match the trigger, not the vibe</text>
+
+<rect class="panel" x="470" y="255" width="330" height="150" rx="20"/>
+<text class="label" x="505" y="300">2. Route</text>
+<text class="small" x="505" y="332">Single-plane → stop</text>
+<text class="small" x="505" y="358">Cross-plane → continue</text>
+<text class="tiny" x="505" y="384">Over-pulling is the #1 misfire</text>
+
+<rect class="panel" x="870" y="255" width="660" height="150" rx="20"/>
+<text class="label" x="905" y="300">3. Pull only what the scenario needs</text>
+<text class="small" x="905" y="332">entra.get_user · intune.search_managed_devices · list_sign_ins · list_role_assignments</text>
+<text class="small" x="905" y="358">Read tools are free. Nothing here can write.</text>
+
+<path class="line" d="M400 330h70M800 330h70"/>
+<path class="arrow" d="M462 318l12 12-12 12zM862 318l12 12-12 12z"/>
+
+<text class="label" x="70" y="460">4. Join across planes</text>
+<rect class="tag" x="70" y="480" width="355" height="62" rx="14"/>
+<text class="small" x="95" y="508">userPrincipalName (case-insensitive)</text>
+<text class="tiny" x="95" y="530">never display name</text>
+<rect class="tag" x="455" y="480" width="355" height="62" rx="14"/>
+<text class="small" x="480" y="508">deviceDetail.deviceId</text>
+<text class="tiny" x="480" y="530">↔ Intune azureADDeviceId</text>
+<rect class="tag" x="840" y="480" width="355" height="62" rx="14"/>
+<text class="small" x="865" y="508">purview custodian email</text>
+<text class="tiny" x="865" y="530">↔ Entra UPN</text>
+<rect class="tag" x="1225" y="480" width="305" height="62" rx="14"/>
+<text class="small" x="1250" y="508">userId</text>
+<text class="tiny" x="1250" y="530">↔ stable id</text>
+
+<path class="dash" d="M235 405v70M635 405v70M1017 405v70M1377 405v70"/>
+
+<rect class="panel" x="70" y="580" width="730" height="185" rx="20"/>
+<text class="label" x="105" y="622">5. Apply flag rules</text>
+<text class="small" x="105" y="656">CONTRADICTION — Entra isCompliant ≠ Intune complianceState</text>
+<text class="small" x="105" y="682">STALE · ORPHAN · RISKY_SIGNIN · MFA_WEAK · PRIV_RISK · OFFBOARD_GAP</text>
+<text class="small" x="105" y="708">DATA_EXFIL · INSIDER_RISK · HOLD_GAP · BEC_FORWARDING · APP_RISK</text>
+<text class="tiny" x="105" y="740">Flag on disagreement — do not assume one side is a bug.</text>
+
+<rect class="panel" x="870" y="580" width="660" height="185" rx="20"/>
+<text class="label" x="905" y="622">6. Degrade honestly</text>
+<text class="small" x="905" y="656">Plane 403s or is down → say which evidence is missing</text>
+<text class="small" x="905" y="682">Answer from what actually returned, and name the gap</text>
+<text class="tiny" x="905" y="714">A missing purview.list_retention_labels under app_only is expected,</text>
+<text class="tiny" x="905" y="736">not an outage — it is delegated-only.</text>
+
+<path class="line" d="M800 672h70"/>
+<path class="arrow" d="M862 660l12 12-12 12z"/>
+
+<rect class="guard" x="70" y="800" width="1460" height="70" rx="18"/>
+<text class="label" x="105" y="832">Step 7 — Report: tenant, evidence, flags, what you could not see</text>
+<text class="small" x="105" y="856">Append the audit entry after answering. This workflow is read-only: it never writes to a tenant.</text>
+</svg>

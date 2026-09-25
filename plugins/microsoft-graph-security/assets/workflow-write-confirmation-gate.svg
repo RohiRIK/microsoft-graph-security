@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><style>
+  .bg{fill:#081525}.panel{fill:#10253d;stroke:#2d5d85;stroke-width:2}.panel2{fill:#0d1e31;stroke:#3b729f;stroke-width:2}.title{fill:#f4f8fc;font:700 40px Arial,sans-serif}.sub{fill:#b6cadb;font:400 21px Arial,sans-serif}.label{fill:#f4f8fc;font:700 23px Arial,sans-serif}.small{fill:#c8d8e6;font:400 18px Arial,sans-serif}.tiny{fill:#9bb5ca;font:400 15px Arial,sans-serif}.amber{fill:#ffbd59}.green{fill:#4dd4a8}.pink{fill:#ff8ea1}.line{stroke:#6ccff6;stroke-width:4;fill:none}.arrow{fill:#6ccff6}.tag{fill:#183b59;stroke:#4f96c4;stroke-width:1.5}.guard{fill:#14293d;stroke:#ffbd59;stroke-width:3}.deny{fill:#362338;stroke:#ff8ea1;stroke-width:3}.go{fill:#0f2e2a;stroke:#4dd4a8;stroke-width:3}
+</style><rect class="bg" width="1600" height="900"/>
+<text class="title" x="70" y="70">Write Confirmation Gate</text><text class="sub" x="70" y="105">Two independent locks, and a human between them — the same shape in every plane</text>
+
+<rect class="panel" x="70" y="150" width="330" height="150" rx="20"/>
+<text class="label" x="105" y="196">Lock 1 — Write opt-in</text>
+<text class="small" x="105" y="228">ENABLE_WRITES / enableWrites</text>
+<text class="small" x="105" y="254">off by default, everywhere</text>
+<text class="tiny" x="105" y="282">No flag → the tool is not registered at all.</text>
+
+<rect class="panel" x="470" y="150" width="330" height="150" rx="20"/>
+<text class="label" x="505" y="196">Risk classification</text>
+<text class="small" x="505" y="228">read_public → read_sensitive</text>
+<text class="small" x="505" y="254">→ write_standard → destructive → critical</text>
+<text class="tiny" x="505" y="282">Unclassified → refuse to start. Fail closed.</text>
+
+<rect class="panel" x="870" y="150" width="660" height="150" rx="20"/>
+<text class="label" x="905" y="196">Lock 2 — confirm: true at call time</text>
+<text class="small" x="905" y="228">Enforced centrally in withGuardrail(), not by each handler remembering to.</text>
+<text class="small" x="905" y="254">destructive and critical always require it.</text>
+
+<path class="line" d="M400 225h70M800 225h70"/>
+<path class="arrow" d="M462 213l12 12-12 12zM862 213l12 12-12 12z"/>
+
+<rect class="deny" x="70" y="360" width="660" height="185" rx="20"/>
+<text class="label" x="105" y="405">Call without confirm</text>
+<text class="small" x="105" y="440">→ returns a PREVIEW</text>
+<text class="small" x="105" y="466">no Graph call is made</text>
+<text class="small" x="105" y="492">logged as confirmation_required</text>
+<text class="tiny" x="105" y="524">A stopped-at-the-gate write is still an audit event.</text>
+
+<rect class="guard" x="800" y="360" width="730" height="185" rx="20"/>
+<text class="label" x="835" y="405">Show the preview to a human</text>
+<text class="small" x="835" y="440">"Isolate WIN-ABC123 — device is unmanaged, last seen 9 days."</text>
+<text class="small" x="835" y="466">They see exactly what will change, before anything changes.</text>
+<text class="tiny" x="835" y="500">Never infer approval from "investigate this" or "make a plan".</text>
+<text class="tiny" x="835" y="524">An approval is a person clicking yes. Not an inference.</text>
+
+<path class="line" d="M500 545v55M1165 545v55"/>
+<path class="arrow" d="M488 592l12 12 12-12zM1153 592l12 12 12-12z"/>
+
+<rect class="go" x="330" y="630" width="940" height="120" rx="20"/>
+<text class="label" x="370" y="676">Call again with confirm: true — only after explicit approval</text>
+<text class="small" x="370" y="710">Executes, redacts the response, and writes the audit row with risk level, tool, and outcome.</text>
+<text class="tiny" x="370" y="738">Tenant allowlist, rate limits, and session expiry still apply on the way through.</text>
+
+<rect class="panel2" x="70" y="790" width="1460" height="75" rx="16"/>
+<text class="small" x="105" y="824">The agent can read your directory. It cannot change it without the opt-in AND the click. Under the gateway, a backend</text>
+<text class="small" x="105" y="850">never inherits a write flag from the gateway environment — settings.yaml is the only place it can be turned on.</text>
+</svg>

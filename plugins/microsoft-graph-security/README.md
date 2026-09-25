@@ -56,6 +56,8 @@ installed. Run `bun run link-skills` after a fresh clone to restore the links.
 
 ## Host support
 
+![One workflow package, many agents](assets/plugin-host-adapters.svg)
+
 See `adapters/host-matrix.md` for every supported host, which need a package,
 which are MCP-only, and which are broken on this machine.
 
