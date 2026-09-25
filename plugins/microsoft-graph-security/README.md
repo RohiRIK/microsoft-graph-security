@@ -1,5 +1,9 @@
 # Portable Microsoft 365 security workflows
 
+**To use the workflows — paste this into your agent, one line:**
+
+> Install the microsoft-graph-security plugin, then route my request through `skills/m365-security-workflows/SKILL.md` to the canonical skill for it; this is a read-only-by-default Microsoft 365 MCP suite where writes need an explicit `confirm: true`, and every answer must open by naming the tenant from `gateway://session`.
+
 This package is the host-neutral workflow package for this repository. The substantive instructions stay in the repository's canonical `skills/`; host adapters only route to them and describe the host's supported native package or MCP format.
 
 ## Source vs built package
@@ -19,7 +23,13 @@ Both copy the canonical `skills/`; neither is checked in.
 
 ## Install and load
 
-No global installation is performed by this repository. Choose one host:
+**Paste this into your agent — one line, it picks the right command for you:**
+
+> Read `adapters/host-matrix.md`, then run the install line for the agent you actually are — it lists every supported host, which need a package, which are MCP-only, and which are broken.
+
+The full per-host commands are below, and in `adapters/host-matrix.md`.
+
+### Validate (read-only, writes nothing)
 
 ```bash
 # Antigravity CLI (agy)
