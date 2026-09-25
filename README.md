@@ -4,7 +4,11 @@ Portable security-investigation workflows packaged once for **Claude Code**,
 **Antigravity (`agy`)**, **Goose**, **Pi**, **OpenCode**, **OpenClaw**, and any
 MCP-compatible agent.
 
-![One workflow package, many agents](assets/plugin-host-adapters.svg)
+**Paste this into your agent — one line, no setup:**
+
+> Install the microsoft-graph-security plugin, then route my request through `skills/m365-security-workflows/SKILL.md` to the canonical skill for it; this is a read-only-by-default Microsoft 365 MCP suite where writes need an explicit `confirm: true`, and every answer must open by naming the tenant from `gateway://session`.
+
+![One workflow package, many agents](plugins/microsoft-graph-security/assets/plugin-host-adapters.svg)
 
 ## Layout
 
